@@ -1,0 +1,12 @@
+name: dart_test_matchers
+version: 0.0.1-dev1
+description: Useful test matchers that are not available in the standard Dart test package.
+homepage: https://github.com/matthew-carroll/dart_test_matchers
+
+environment:
+  sdk: '>=2.6.0 <3.0.0'
+
+dependencies:
+  test: any
+
+dev_dependencies:
