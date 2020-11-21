@@ -22,3 +22,5 @@ doc/api/
 
 # IDE
 .idea
+
+.DS_Store

@@ -1,9 +1,9 @@
 import 'package:test/test.dart';
 
-const double defaultErrorTolerance = 1e-10;
+const double _defaultErrorTolerance = 1e-10;
 
 Matcher moreOrLessEquals(double value,
-    {double epsilon = defaultErrorTolerance}) {
+    {double epsilon = _defaultErrorTolerance}) {
   return _MoreOrLessEquals(value, epsilon);
 }
 
