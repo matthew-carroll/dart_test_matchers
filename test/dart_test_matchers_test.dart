@@ -1,4 +1,4 @@
-import 'package:dart_test_matchers/matchers.dart';
+import 'package:dart_test_matchers/dart_test_matchers.dart';
 import 'package:test/test.dart';
 
 void main() {
