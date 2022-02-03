@@ -1,5 +1,5 @@
 name: dart_test_matchers
-version: 0.1.0
+version: 0.2.0
 description: Useful test matchers that are not available in the standard Dart test package.
 homepage: https://github.com/matthew-carroll/dart_test_matchers
 
