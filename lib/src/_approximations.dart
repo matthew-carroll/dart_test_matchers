@@ -2,8 +2,7 @@ import 'package:test/test.dart';
 
 const double _defaultErrorTolerance = 1e-10;
 
-Matcher moreOrLessEquals(double value,
-    {double epsilon = _defaultErrorTolerance}) {
+Matcher moreOrLessEquals(double value, {double epsilon = _defaultErrorTolerance}) {
   return _MoreOrLessEquals(value, epsilon);
 }
 
@@ -14,22 +13,19 @@ class _MoreOrLessEquals extends Matcher {
   final double epsilon;
 
   @override
-  bool matches(Object object, Map<dynamic, dynamic> matchState) {
-    if (object is! num) return false;
-    if (object == value) return true;
-    final num test = object as num;
+  bool matches(dynamic test, Map<dynamic, dynamic> matchState) {
+    if (test is! num) return false;
+    if (test == value) return true;
     return (test - value).abs() <= epsilon;
   }
 
   @override
-  Description describe(Description description) =>
-      description.add('$value (±$epsilon)');
+  Description describe(Description description) => description.add('$value (±$epsilon)');
 
   @override
-  Description describeMismatch(Object item, Description mismatchDescription,
-      Map<dynamic, dynamic> matchState, bool verbose) {
-    return super
-        .describeMismatch(item, mismatchDescription, matchState, verbose)
-          ..add('$item is not in the range of $value (±$epsilon).');
+  Description describeMismatch(
+      dynamic item, Description mismatchDescription, Map<dynamic, dynamic> matchState, bool verbose) {
+    return super.describeMismatch(item, mismatchDescription, matchState, verbose)
+      ..add('$item is not in the range of $value (±$epsilon).');
   }
 }
